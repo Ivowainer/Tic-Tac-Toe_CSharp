@@ -1,8 +1,0 @@
-C:\Users\ivanc\Documents\GitHub\C#\TicTacToe\obj\Debug\TicTacToe.csproj.AssemblyReference.cache
-C:\Users\ivanc\Documents\GitHub\C#\TicTacToe\obj\Debug\TicTacToe.csproj.SuggestedBindingRedirects.cache
-C:\Users\ivanc\Documents\GitHub\C#\TicTacToe\obj\Debug\TicTacToe.csproj.CoreCompileInputs.cache
-C:\Users\ivanc\Documents\GitHub\C#\TicTacToe\bin\Debug\TicTacToe.exe.config
-C:\Users\ivanc\Documents\GitHub\C#\TicTacToe\bin\Debug\TicTacToe.exe
-C:\Users\ivanc\Documents\GitHub\C#\TicTacToe\bin\Debug\TicTacToe.pdb
-C:\Users\ivanc\Documents\GitHub\C#\TicTacToe\obj\Debug\TicTacToe.exe
-C:\Users\ivanc\Documents\GitHub\C#\TicTacToe\obj\Debug\TicTacToe.pdb

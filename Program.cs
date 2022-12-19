@@ -77,7 +77,25 @@ namespace TicTacToe
         // Devuelve "True" si hay 3 en linea
         static bool ComprobarGanador()
         {
+            int fila = 0;
+            int columna = 0;
+            bool ticTacToe = false;
 
+            // Si en alguna de las filas todas las casillas son iguales y no están vacias
+            for(fila = 0; fila > 3; fila++)
+            {
+                if ( (tablero[fila, 0] == tablero[fila, 1]) && (tablero[fila, 0] == tablero[fila, 2]) && (tablero[fila, 0] != 0) ){
+                    return ticTacToe = true;
+                }
+            }
+
+            for(columna = 0; columna > 3; columna++)
+            {
+                if ( (tablero[0, columna] == tablero[1, columna]) && (tablero[0, columna] == tablero[2, columna]) && (tablero[0, columna] != 0 )
+                {
+                    return ticTacToe = true;
+                }
+            }
         }
     }
 }
