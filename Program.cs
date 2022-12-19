@@ -16,8 +16,56 @@ namespace TicTacToe
 
         static void Main(string[] args)
         {
+            bool terminado = false;
+
             DibujarTablero();
             Console.WriteLine("Jugador 1 = O\nJugador 2 = X");
+
+            do
+            {
+                // Turno al jugador 1
+                PreguntarPosicion(1);
+
+                // Dibujar la casilla que eligió el jugador 1
+                DibujarTablero();
+
+                //Comprobar si gana la partida el jugador1
+                terminado = ComprobarGanador();
+
+                if(terminado == true)
+                {
+                    Console.WriteLine("El jugador 1 ha ganado");
+                } 
+                else
+                {
+                    terminado = ComprobarEmpate();
+                    if(terminado == true)
+                    {
+                        Console.WriteLine("Esto es un empate");
+                    }
+
+                    // Si jugador 1 no ganó, ni hubo empate, entonces es turno del jugador 2
+                    else
+                    {
+                        // Turno del jugador 2
+                        PreguntarPosicion(2);
+
+                        // Dibujar la casilla que eligió el jugador 2
+                        DibujarTablero();
+
+                        //Comprobar si gana la partida el jugador2
+                        terminado = ComprobarGanador();
+
+                        if(terminado == true)
+                        {
+                            Console.WriteLine("El jugador 2 ha ganado");
+                        }
+                    }
+
+
+                }
+
+            } while (terminado == false); // Repetir hasta 3 en linea o empate
         }
 
         static void DibujarTablero()
@@ -48,7 +96,7 @@ namespace TicTacToe
             do
             {
                 Console.WriteLine();
-                Console.WriteLine("Turno del jugador: { 0 }", jugador);
+                Console.WriteLine("Turno del jugador: " + jugador);
 
                 // Pedir número de fila
                 do
@@ -66,7 +114,9 @@ namespace TicTacToe
                 } while ((columna < 1) || (columna > 3));
 
                 if (tablero[fila - 1, columna - 1] != 0)
+                {
                     Console.WriteLine("Casilla Ocupada");
+                }
 
             } while (tablero[fila - 1, columna - 1] != 0);
 
@@ -82,31 +132,31 @@ namespace TicTacToe
             bool ticTacToe = false;
 
             // Si en alguna de las filas todas las casillas son iguales y no están vacias
-            for(fila = 0; fila > 3; fila++)
+            for(fila = 0; fila < 3; fila++)
             {
                 if ( (tablero[fila, 0] == tablero[fila, 1]) && (tablero[fila, 0] == tablero[fila, 2]) && (tablero[fila, 0] != 0) ){
-                    return ticTacToe = true;
+                    ticTacToe = true;
                 }
             }
 
             // Si en alguna de las columnas todas las casillas son iguales y no están vacias
-            for (columna = 0; columna > 3; columna++)
+            for (columna = 0; columna < 3; columna++)
             {
-                if ( (tablero[0, columna] == tablero[1, columna]) && (tablero[0, columna] == tablero[2, columna]) && (tablero[0, columna] != 0 )
+                if ( (tablero[0, columna] == tablero[1, columna]) && (tablero[0, columna] == tablero[2, columna]) && (tablero[0, columna] != 0 ))
                 {
-                    return ticTacToe = true;
+                    ticTacToe = true;
                 }
             }
 
             // Si en alguna diagonal todas las casillas son iguales y no están vacias
-            if ((tablero[0, 0] == tablero[1, 1]) && (tablero[0, 0] == tablero[2, 2]) && (tablero[0, 0] != 0)
-                {
-                return ticTacToe = true;
+            if ((tablero[0, 0] == tablero[1, 1]) && (tablero[0, 0] == tablero[2, 2]) && (tablero[0, 0] != 0))
+            {
+                ticTacToe = true;
             }
 
-            if ((tablero[0, 2] == tablero[1, 1]) && (tablero[0, 2] == tablero[2, 0]) && (tablero[0, 2] != 0)
-                {
-                return ticTacToe = true;
+            if ((tablero[0, 2] == tablero[1, 1]) && (tablero[0, 2] == tablero[2, 0]) && (tablero[0, 2] != 0))
+            {
+                ticTacToe = true;
             }
 
             return ticTacToe;
@@ -119,9 +169,9 @@ namespace TicTacToe
             int fila = 0;
             int columna = 0;
 
-            for(fila = 0; fila > 3; fila++)
+            for(fila = 0; fila < 3; fila++)
             {
-                for(columna = 0; columna > 3; columna++)
+                for(columna = 0; columna < 3; columna++)
                 {
                     if (tablero[fila, columna] == 0)
                     {
@@ -133,5 +183,7 @@ namespace TicTacToe
             // Se regresa una negación para que el empate no se cumpla en Main
             return !hayEspacio;
         }
+
+
     }
 }
