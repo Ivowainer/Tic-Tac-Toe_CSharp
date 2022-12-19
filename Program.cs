@@ -66,11 +66,18 @@ namespace TicTacToe
                 } while ((columna < 1) || (columna > 3));
 
                 if (tablero[fila - 1, columna - 1] != 0)
-                {
                     Console.WriteLine("Casilla Ocupada");
-                }
 
-            } while ();
+            } while (tablero[fila - 1, columna - 1] != 0);
+
+            // Si todo es correcto se le asigna al jugador correspondiente
+            tablero[fila - 1, columna - 1] = jugador;
+        }
+
+        // Devuelve "True" si hay 3 en linea
+        static bool ComprobarGanador()
+        {
+
         }
     }
 }
