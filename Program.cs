@@ -41,9 +41,22 @@ namespace TicTacToe
         }
 
         // Preguntar donde escribir y dibuja en el tablero
-        static void PreguntarPosicion(int jugador)
+        static void PreguntarPosicion(int jugador) //1 = jugador1 ; 2 = jugador2
         {
+            int fila, columna;
 
+            do
+            {
+                Console.WriteLine();
+                Console.WriteLine("Turno del jugador: { 0 }", jugador);
+
+                // Pedir numero de fila
+                do
+                {
+                    Console.Write("Selecciona la fila (1 a 3): ");
+                    fila = Convert.ToInt32(Console.ReadLine());
+                } while ();
+            } while (fila == 2);
         }
     }
 }
