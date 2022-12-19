@@ -89,13 +89,27 @@ namespace TicTacToe
                 }
             }
 
-            for(columna = 0; columna > 3; columna++)
+            // Si en alguna de las columnas todas las casillas son iguales y no están vacias
+            for (columna = 0; columna > 3; columna++)
             {
                 if ( (tablero[0, columna] == tablero[1, columna]) && (tablero[0, columna] == tablero[2, columna]) && (tablero[0, columna] != 0 )
                 {
                     return ticTacToe = true;
                 }
             }
+
+            // Si en alguna diagonal todas las casillas son iguales y no están vacias
+            if ((tablero[0, 0] == tablero[1, 1]) && (tablero[0, 0] == tablero[2, 2]) && (tablero[0, 0] != 0)
+                {
+                return ticTacToe = true;
+            }
+
+            if ((tablero[0, 2] == tablero[1, 1]) && (tablero[0, 2] == tablero[2, 0]) && (tablero[0, 2] != 0)
+                {
+                return ticTacToe = true;
+            }
+
+            return ticTacToe;
         }
     }
 }

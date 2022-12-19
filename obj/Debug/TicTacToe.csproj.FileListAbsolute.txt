@@ -1,0 +1,3 @@
+C:\Users\ivanc\Documents\GitHub\C#\TicTacToe\obj\Debug\TicTacToe.csproj.AssemblyReference.cache
+C:\Users\ivanc\Documents\GitHub\C#\TicTacToe\obj\Debug\TicTacToe.csproj.SuggestedBindingRedirects.cache
+C:\Users\ivanc\Documents\GitHub\C#\TicTacToe\obj\Debug\TicTacToe.csproj.CoreCompileInputs.cache
