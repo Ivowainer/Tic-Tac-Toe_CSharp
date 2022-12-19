@@ -50,13 +50,27 @@ namespace TicTacToe
                 Console.WriteLine();
                 Console.WriteLine("Turno del jugador: { 0 }", jugador);
 
-                // Pedir numero de fila
+                // Pedir número de fila
                 do
                 {
                     Console.Write("Selecciona la fila (1 a 3): ");
                     fila = Convert.ToInt32(Console.ReadLine());
-                } while ();
-            } while (fila == 2);
+                } while ((fila < 1) || (fila > 3));
+
+                // Pedimos el número de columna 
+                do
+                {
+                    Console.Write("Selecciona la columna (1 a 3): ");
+                    columna = Convert.ToInt32(Console.ReadLine());
+
+                } while ((columna < 1) || (columna > 3));
+
+                if (tablero[fila - 1, columna - 1] != 0)
+                {
+                    Console.WriteLine("Casilla Ocupada");
+                }
+
+            } while ();
         }
     }
 }
