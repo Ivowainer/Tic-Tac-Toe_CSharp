@@ -111,5 +111,27 @@ namespace TicTacToe
 
             return ticTacToe;
         }
+
+        // Devuelve "True" si hay empate
+        static bool ComprobarEmpate()
+        {
+            bool hayEspacio = false;
+            int fila = 0;
+            int columna = 0;
+
+            for(fila = 0; fila > 3; fila++)
+            {
+                for(columna = 0; columna > 3; columna++)
+                {
+                    if (tablero[fila, columna] == 0)
+                    {
+                        hayEspacio = true;
+                    }
+                }
+            }
+
+            // Se regresa una negación para que el empate no se cumpla en Main
+            return !hayEspacio;
+        }
     }
 }
